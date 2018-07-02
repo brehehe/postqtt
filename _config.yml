@@ -1,0 +1,19 @@
+## GOOD https://blog.webjeda.com/jekyll-categories/
+## https://agmstudio.io/themes/material-style/2.0.2/
+
+title: "Article Information"
+description: "Article Website information for Insurance, Mortgage, Loans, Credit, Lawyer, Hosting"
+url: https://post.qttdev.xyz
+stylever: 23
+
+webmaster_verifications:
+  google: THwvIRN0ae05eoIXRES7gFTkoVJrPXHVnvmwbVPJPVI
+
+lang: en_EN
+
+plugins:
+  - jekyll-avatar
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
