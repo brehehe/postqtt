@@ -101,12 +101,14 @@ var timene = 1;
 function changeWait() {
 	setTimeout(function () {
 		if (timene >= 5) {
-			alert("Sudah");
+			$("#showcount").html('Wait ' + timene + ' Sec / 5 sec');
+			$("#showcount").hide();
+			$("#continuedownload").show();
 		} else {
 			// change 
 			$("#showcount").html('Wait ' + timene + ' Sec / 5 sec');
-			changeWait();
 			timene++;
+			changeWait();
 		}
 	}, 1000)
 }
