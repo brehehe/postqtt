@@ -194,7 +194,7 @@
 										data-ad-client="ca-pub-8797559827267652"
 										data-ad-slot="8680364632"></ins>
 					<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-					<a style="display: none;" class="btn btn-success download-title" id="downloadfile"></a>
+					<a style="display: none;" href="#" class="btn btn-success download-title" id="downloadfile"></a>
 				</div><!-- /.blog-main -->
 
 				<aside class="col-md-4 blog-sidebar">
@@ -343,7 +343,8 @@
 								$("#showcount").hide();
 								$("#continuedownload").show();
 								$("#downloadfile").show();
-								$("#downloadfile").html("File ready to download, Click here to download " + downloadfile);
+								$("#downloadfile").attr('href', fdata);
+								$("#downloadfile").html("File ready to download, Click here to download " + titlefile);
 							}, 5000);
 						});
 
