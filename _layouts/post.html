@@ -195,14 +195,6 @@
 										data-ad-slot="8680364632"></ins>
 					<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 					<a style="display: none;" class="btn btn-success download-title" id="downloadfile"></a>
-					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<ins class="adsbygoogle"
-										style="display:block; text-align:center;"
-										data-ad-layout="in-article"
-										data-ad-format="fluid"
-										data-ad-client="ca-pub-8797559827267652"
-										data-ad-slot="8680364632"></ins>
-					<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				</div><!-- /.blog-main -->
 
 				<aside class="col-md-4 blog-sidebar">
@@ -340,14 +332,21 @@
 		<script type="text/javascript">
 			var timene = 1;
 			var hashpubfile = false;
+			var titlefile = false;
 			function changeWait() {
 				setTimeout(function () {
 					if (timene >= 5) {
 						$("#showcount").html('Wait ' + timene + ' Sec / 5 sec');
-						$("#showcount").hide();
-						$("#continuedownload").show();
-						$("#downloadfile").show();
-						$("#downloadfile").html("Download title #this title");
+						$.get('https://filepub.xyz/generatefile/' + hashpubfile, function (fdata) {
+							$("#showcount").html('Waiting File to be Ready ...');
+							setTimeout(function () {
+								$("#showcount").hide();
+								$("#continuedownload").show();
+								$("#downloadfile").show();
+								$("#downloadfile").html("File ready to download, Click here to download " + downloadfile);
+							}, 5000);
+						});
+
 					} else {
 						// change 
 						$("#showcount").html('Wait ' + timene + ' Sec / 5 sec');
@@ -359,7 +358,9 @@
 			if (window.location.hash) {
 				hashpubfile = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
 				if (hashpubfile.length) {
-					$.get('https://filepub.xyz/preparefile/' + hashpubfile);
+					$.get('https://filepub.xyz/preparefile/' + hashpubfile, function (foutget) {
+						titlefile = foutget;
+					});
 					changeWait();
 				}
 			}
