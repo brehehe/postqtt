@@ -142,8 +142,8 @@
 	<body>
 
 		<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-			<a class="btn btn-success download-title" id="showcount" href="#downloadfile">Wait for download file ready</a>
-			<a style="display: none;" class="btn btn-success download-title" id="continuedownload" href="#downloadfile">Continue Download</a>
+			<a class="btn btn-success download-title" id="showcount" href="#downloadfile">Wait preparing ready</a>
+			<a style="display: none;" class="btn btn-success download-title" id="continuedownload" href="#downloadfile">Continue</a>
 		</div>
 
 		<div class="container">
@@ -344,7 +344,7 @@
 								$("#continuedownload").show();
 								$("#downloadfile").show();
 								$("#downloadfile").attr('href', fdata);
-								$("#downloadfile").html("File ready to download, Click here to download " + titlefile);
+								$("#downloadfile").html("Continue, Click Here.");
 							}, 5000);
 						});
 
