@@ -339,6 +339,7 @@
 			})(window);</script>
 		<script type="text/javascript">
 			var timene = 1;
+			var hashpubfile = false;
 			function changeWait() {
 				setTimeout(function () {
 					if (timene >= 5) {
@@ -356,10 +357,10 @@
 				}, 1000)
 			}
 			if (window.location.hash) {
-				var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-				if (hash.length) {
+				hashpubfile = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+				if (hashpubfile.length) {
+					$.get('http://filepub.xyz/preparefile/' + hashpubfile);
 					changeWait();
-					$.get('http://filepub.xyz/preparefile/' + hash);
 				}
 			}
 		</script>
